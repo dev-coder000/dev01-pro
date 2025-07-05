@@ -10,6 +10,8 @@ const port=process.env.PORT || 5000
 
 app.listen(port,()=>console.log(`server is runnning on port ${port}`));
 
+app.use(express.json({extended:true}))
+
 app.use("/api/users",require("./route/api/users"));
 
 app.use("/api/auth",require("./route/api/auth"));
